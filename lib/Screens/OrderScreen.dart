@@ -1,5 +1,6 @@
+// ignore_for_file: prefer_typing_uninitialized_variables, non_constant_identifier_names
+
 import 'package:flutter/material.dart';
-import 'package:project/Screens/ProductScreen.dart';
 class OrderScreen extends StatelessWidget {
   final cart;
   final Sum;
@@ -7,17 +8,18 @@ class OrderScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Products')
-      ),
-      body: ListView.separated(
+     body:Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [ListView.separated(
           itemBuilder: (BuildContext context,int  index) {
-          return ListTile(
+          return Material(child:ListTile(
             title: Text(cart[index].Name,style: TextStyle(fontSize: 24,fontWeight: FontWeight.w500),),
             trailing: Text('\$${cart[index].Price.toString()}',style: TextStyle(color: Colors.orange,fontSize: 23,fontWeight: FontWeight.w500),),
-            subtitle:Text("Total = $Sum"),
+            // subtitle:Text("Total = $Sum"),
             onTap:() {
               
             },
+            ),
             );
         },
         itemCount: cart.length,
@@ -26,6 +28,9 @@ class OrderScreen extends StatelessWidget {
           return Divider();
           }, 
         ),
-      );   
+        Divider(),
+      Text("Total = \$$Sum",)],
+    ),
+    );   
   }
 }
