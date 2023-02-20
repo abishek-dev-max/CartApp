@@ -17,7 +17,7 @@ class ProductScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Products')
-      ),
+      ,backgroundColor: Color.fromARGB(255, 100, 255, 208)),
       body: ListView.separated(
           itemBuilder: (BuildContext context,int  index) {
           return ListTile(

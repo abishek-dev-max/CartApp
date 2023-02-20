@@ -12,7 +12,8 @@ class OrderScreen extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [ListView.separated(
           itemBuilder: (BuildContext context,int  index) {
-          return Material(child:ListTile(
+          return Material(color:Colors.greenAccent ,
+            child:ListTile(
             title: Text(cart[index].Name,style: TextStyle(fontSize: 24,fontWeight: FontWeight.w500),),
             trailing: Text('\$${cart[index].Price.toString()}',style: TextStyle(color: Colors.orange,fontSize: 23,fontWeight: FontWeight.w500),),
             // subtitle:Text("Total = $Sum"),

@@ -67,9 +67,9 @@ class _CartAppState extends State<CartApp> {
                                 ProductScreen((SelectedProduct) {
                                   setState(() {
                                     cart.add(SelectedProduct);//update
-                                    for (var element in cart) {
+                                    cart.forEach((element) {
                                       sum=sum+element.Price;
-                                    }
+                                    });
                                   });
                                 }
                                 ),
